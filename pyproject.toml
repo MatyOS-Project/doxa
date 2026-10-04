@@ -1,0 +1,29 @@
+[build-system]
+requires = ["setuptools>=64"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "doxa"
+version = "0.40.0"
+description = "A calibrated, honest judge for mathematical statements — TRUE / FALSE / REALISTIC, with proofs where it can."
+readme = "README.md"
+requires-python = ">=3.8"
+license = { text = "MIT" }
+authors = [{ name = "Ahmed Hafdi" }]
+keywords = ["mathematics", "inequalities", "calibration", "proof", "sum-of-squares", "number-theory", "graph-theory"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Topic :: Scientific/Engineering :: Mathematics",
+    "Intended Audience :: Science/Research",
+]
+dependencies = []
+
+[project.scripts]
+doxa = "doxa.cli:main"
+doxa-ui = "doxa.web:main"
+
+[tool.setuptools]
+packages = ["doxa"]
+
+[tool.setuptools.package-data]
+doxa = ["*.json", "assets/*.svg", "assets/*.png"]
